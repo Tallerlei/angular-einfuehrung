@@ -10,17 +10,19 @@ import { BookDataService } from '../shared/book-data.service';
 export class BookListComponent implements OnInit {
   @Input() title: string;
   @Output() titleClicked = new EventEmitter<string>();
-  public books: {}[];
+  public books: {}[] = [];
   constructor(
     private bookDataService: BookDataService
 
-  ) { }
-
+  ) {
+  }
   ngOnInit() {
-    this.books = this.bookDataService.getBooks();
+    this.bookDataService.getBooks().subscribe((books)=> {
+      this.books = books;
+    });
   }
 
-  clickEvent(event){
+  clickEvent(event) {
     this.titleClicked.emit('EventData: ' + event.target.innerText);
   }
 }
