@@ -10,9 +10,7 @@
 <h3 (click)="clickEvent($event)">{{title}}</h3>
 
 <div class="" *ngFor="let book of books">
-  {{book.title}}
-  {{book.author}}
-  {{book.isbn}}
+<a [routerLink]="['/books', book.isbn]"> {{book.title}}</a>
   <hr>
 </div>
 

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { routing } from './app.routing';
+
 import { AppComponent } from './app.component';
 import { DefaultParameterComponent } from './default-parameter/default-parameter.component';
 import { RestParametersComponent } from './rest-parameters/rest-parameters.component';
@@ -13,6 +15,7 @@ import { DestructuringComponent } from './destructuring/destructuring.component'
 import { BookListComponent } from './book-list/book-list.component';
 
 import { BookDataService } from './shared/book-data.service';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,14 @@ import { BookDataService } from './shared/book-data.service';
     TemplateStringComponent,
     ClassesComponent,
     DestructuringComponent,
-    BookListComponent
+    BookListComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [
     BookDataService

@@ -1,0 +1,9 @@
+<div *ngIf="book" class="">
+  <p>Titel: {{book.title}}</p>
+  <p>Untertitel: {{book.subtitle}}</p>
+  <p>ISBN: {{book.isbn}}</p>
+  <p>Auszug: {{book.abstract}}</p>
+  <p>Seitenzahl: {{book.numPages}}</p>
+  <p>Autor: {{book.author}}</p>
+  <p>Verlag: {{book.publisher.name }} @ {{book.publisher.url}}</p>
+</div>
